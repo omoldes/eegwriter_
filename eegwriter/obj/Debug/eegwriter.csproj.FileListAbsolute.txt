@@ -1,0 +1,9 @@
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\eegwriter.exe.config
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\edk.dll
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\glut64.dll
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\eegwriter.exe
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\eegwriter.pdb
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\bin\Debug\DotNetEmotivSDK.dll
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\obj\Debug\eegwriter.csprojResolveAssemblyReference.cache
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\obj\Debug\eegwriter.exe
+C:\Users\warha\Documents\Visual Studio 2015\Projects\eegwriter\eegwriter\obj\Debug\eegwriter.pdb
