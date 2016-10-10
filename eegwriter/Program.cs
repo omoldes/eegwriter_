@@ -27,7 +27,7 @@ namespace eegwriter
         static int userID = -1;
         static bool hasBeenConectedMsg = false;
         //definimos el nombre del archivo a crear, proporcionando una extensión (csv, txt...)
-        static string filename = "HeadsetInformationLogger.csv";
+        static string filename = DateTime.Now.ToString("yy.MM.dd HH.mm.ss") + ".csv";
         //creamos el objeto que escriba en el archivo (el StreamWriter lleva un booleano según sobreescriba o no)
         static TextWriter file = new StreamWriter(filename, false);
         //definimos una subrutina según la cual recibamos la ID de la diadema
@@ -62,14 +62,18 @@ namespace eegwriter
             Console.WriteLine(" Battery level: " + chargeLevel);
             file.Write(chargeLevel + ",");
             //leemos los datos de cada uno de los sensores y los escribimos en el archivo
+
             /*** Emotiv Insight's Sensors ***/
+            /*
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_AF3) + ",");
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_T7) + ",");
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_O1) + ","); 	// Pz
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_T8) + ",");
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_AF4) + ",");
+            */
+
             /*** Emotiv Epoc+'s Sensors ***/
-            /*
+          
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_CMS) + ","); //0 ¿?
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_DRL) + ","); //1 ¿?
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_FP1) + ","); //2
@@ -88,7 +92,7 @@ namespace eegwriter
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_F8) + ",");  //15
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_AF4) + ","); //16
             file.Write((int)es.GetContactQuality((int)EdkDll.IEE_InputChannels_t.IEE_CHAN_FP2) + ","); //17
-            */
+           
             //acabamos la línea en la que estamos escribiendo. En el caso de un csv, pasamos a una nueva fila
             file.WriteLine("");
         }
@@ -113,15 +117,17 @@ namespace eegwriter
             //creamos un objeto de nuestra clase
             Program p = new Program();
             //creamos un header para el archivo (en el caso del csv, se escribe en cada columna poniendo comas (,) )
+
             /*** Emotiv Insight's Header ***/
-            string header = "Time, Wireless Strength, Battery Level, AF3, T7, Pz, T8, AF4";
+
+            //string header = "Seconds,Decimals,Wireless Strength,Battery Level,AF3,T7,Pz,T8,AF4";
+
             /*** Emotiv Epoc+'s Header ***/
-            /*
-            string header = "Time, Wireless Strength, Battery Level, CMS, DRL, FP1, AF3, F7, F3, FC5, T7, P7, O1, O2, P8, T8, FC6, F4, F8, AF4, FP2";
-            */
+
+            string header = "Seconds,Decimals,Wireless Strength,Battery Level,CMS,DRL,FP1,AF3,F7,F3,FC5,T7,P7,O1,O2,P8,T8,FC6,F4,F8,AF4,FP2";
+            
             //escribimos la cabecera en el archivo e y pasamos a la siguiente línea
             file.WriteLine(header);
-            file.WriteLine("");
             //bucle infinito para la ejecución prolongada del programa
             while (true)
             {
